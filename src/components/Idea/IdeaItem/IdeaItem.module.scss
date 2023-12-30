@@ -1,0 +1,56 @@
+.IdeaItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 5rem;
+  font-size: 1.3rem;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  background-color: #4a4f7a;
+  box-shadow: 0px 1rem 2rem 0px rgba(0, 0, 0, 0.5);
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 0 2rem;
+
+    > button {
+      color: rgba(255, 255, 255, 0.55);
+      white-space: nowrap;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -0.2rem;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.55);
+        transition: width 0.25s ease-out;
+      }
+
+      &:hover::after {
+        width: 100%;
+        left: 0;
+        right: auto;
+      }
+    }
+  }
+
+  > p {
+    font-size: 1.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @media(max-width: 500px) {
+      width: 100%;
+    }
+  }
+
+  @media(max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

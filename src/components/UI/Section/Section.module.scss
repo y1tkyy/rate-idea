@@ -1,0 +1,57 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/vars';
+
+.Section {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  > header {
+    @include flexCenter;
+    background-color: var(--dark-color);
+    min-height: var(--height-header);
+    padding: 0.5rem 0;
+    animation: widthChange 0.5s;
+
+    @keyframes widthChange {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    > h1 {
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    @media (max-width: $hidden-navmenu) {
+      display: none;
+    }
+  }
+
+  > footer {
+    @include flexCenter;
+    background-color: var(--dark-color);
+    min-height: var(--height-footer);
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+    opacity: 0.5;
+  }
+
+  @media (max-width: $hidden-navmenu) {
+    min-height: calc(100vh - var(--height-header));
+  }
+}
+
+.main {
+  flex-grow: 1;
+  padding: 2.4rem;
+
+  @media (max-width: 500px) {
+    padding: 1.6rem;
+  }
+}

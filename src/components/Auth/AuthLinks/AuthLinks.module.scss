@@ -1,0 +1,23 @@
+.AuthLinks {
+  display: flex;
+  gap: 0 0.5rem;
+  font-size: 1.3rem;
+  font-style: italic;
+
+  > span {
+    font-size: 1.1rem;
+    cursor: default;
+  }
+
+  > button {
+    transition: transform 0.25s ease-out;
+
+    &:last-child {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

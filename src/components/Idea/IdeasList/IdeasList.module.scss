@@ -1,0 +1,11 @@
+.IdeasList {
+    > ul {
+        display: flex;
+        flex-direction: column;
+        gap: .8rem 0;
+    }
+}
+
+.Title {
+    margin-bottom: 1.2rem;
+}

@@ -1,0 +1,10 @@
+@import '../../../assets/scss/vars';
+
+.AppLayout {
+  padding-left: var(--width-navmenu);
+
+  @media (max-width: $hidden-navmenu) {
+    padding-left: 0;
+    padding-top: var(--height-header);
+  }
+}

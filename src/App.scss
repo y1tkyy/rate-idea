@@ -1,0 +1,39 @@
+@use 'scss-reset/reset';
+
+@import './assets/scss/fonts';
+@import './assets/scss/vars';
+
+html {
+  color-scheme: dark;
+  font-size: var(--font-size);
+  scrollbar-color: var(--scrollbar-thumb-color) transparent;
+  scrollbar-gutter: stable;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--scrollbar-thumb-color);
+
+    &:hover {
+      background-color: var(--scrollbar-thumb-color-hover);
+    }
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  color: var(--font-color);
+  font-size: 1.4rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

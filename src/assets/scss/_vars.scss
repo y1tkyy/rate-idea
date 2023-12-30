@@ -1,0 +1,35 @@
+$hidden-navmenu: 668px;
+
+:root {
+  --font-family: 'Lato', sans-serif;
+  --font-family-second: 'Rounded', sans-serif;
+  --font-size: calc(10 * (100vmax / 1036));
+  --font-weight: 400;
+  --font-color: #fff;
+
+  --background-color: #1d203e;
+  --dark-color: #2c2f48;
+
+  --scrollbar-thumb-color: rgba(255, 255, 255, 0.3);
+  --scrollbar-thumb-color-hover: rgba(255, 255, 255, 0.5);
+
+  --height-header: 8vmin;
+  --height-footer: 3vmax;
+
+  --width-navmenu: 30vw;
+
+  --border-radius: 2rem;
+
+  @media (max-width: 1000px) {
+    --font-size: calc(13 * (100vmax / 1036));
+  }
+
+  @media (max-width: 500px) {
+    --font-size: calc(15 * (100vmax / 1036));
+  }
+
+  @media (max-width: $hidden-navmenu) {
+    --height-header: 6vmax;
+    --width-navmenu: 100vw;
+  }
+}

@@ -1,0 +1,94 @@
+@import '../../../assets/scss/mixins';
+
+.Modal {
+  @include flexCenter();
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  backdrop-filter: blur(1rem);
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 50vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    gap: 1.6rem;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 1.6rem;
+    border: 0.5rem solid rgba(255, 255, 255, 0.1);
+    scrollbar-gutter: stable;
+
+    > button {
+      margin-left: auto;
+      width: 2rem;
+      height: 1rem;
+      position: relative;
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        height: 2px;
+        border-radius: 2px;
+        transition: all 0.25s ease-out;
+      }
+
+      &::before {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &::after {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+      }
+
+      &:hover {
+        &::after,
+        &::before {
+          background-color: rgba(255, 255, 255, 0.7);
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+      margin: 1.5rem 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: var(--scrollbar-thumb-color);
+
+      &:hover {
+        background-color: var(--scrollbar-thumb-color-hover);
+      }
+    }
+
+    @media (max-width: 668px) {
+      max-width: 90vw;
+    }
+  }
+
+  &-enter {
+    opacity: 0;
+  }
+  &-enter-active {
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+  }
+  &-exit-active {
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+}
